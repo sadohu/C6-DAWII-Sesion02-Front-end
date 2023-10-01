@@ -3,6 +3,7 @@ import { Deporte } from 'src/app/models/deporte.model';
 import { Modalidad } from 'src/app/models/modalidad.model';
 import { DeporteService } from 'src/app/services/deporte.service';
 import { ModalidadService } from 'src/app/services/modalidad.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-modalidad',
@@ -39,7 +40,11 @@ export class AddModalidadComponent {
 
   inserta(){
     this.modalidadService.registraModalidad(this.objModalidad).subscribe(
-      response => alert(response.errores)
+      response => Swal.fire({
+        icon: "info",
+        title: "Resultado del registro - Salas Luperdi",
+        text: response.errores,
+      })
     )
   }
 
