@@ -3,7 +3,7 @@ import { Deporte } from "./deporte.model";
 export class Modalidad {
     idModalidad ?: number;
     nombre ?: string;
-    numHombre ?: number;
+    numHombres ?: number;
     numMujeres ?: number;
     edadMaxima ?: number;
     edadMinima ?: number;
